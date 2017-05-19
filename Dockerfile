@@ -11,6 +11,6 @@ RUN curl --insecure -L https://github.com/Yelp/dumb-init/releases/download/v1.2.
 RUN mkdir -p /opt/jmx_exporter
 RUN curl -L https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_httpserver/$VERSION/$JAR -o /opt/jmx_exporter/$JAR
 COPY start.sh /opt/jmx_exporter/
-COPY config.yml /opt/jmx_exporter/
+COPY config.yml /opt/jmx_exporter/config
 
 CMD ["usr/local/bin/dumb-init", "/opt/jmx_exporter/start.sh"]
